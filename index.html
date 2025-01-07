@@ -1,0 +1,54 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+       <link rel="stylesheet" href="index.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Smythe&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <header>
+              <div class="header-inner">
+			   <img src="./images/bgImg.png" class="header-img">
+               <div class="website-name">
+                <h1>Jimmy's Dinner</h1>
+				<h2>The best burgers and pizzas in town.</h2>
+			</div>
+		   </div>
+            </header>
+            <section>
+              <div class="items-list" id="items-list">
+              </div>
+            </section>
+            <section>
+                <div class="order-list-info" id="order-list-info">
+                  <div class="order-list" id="order-list"></div>
+                  <div class="order">Your order</div>
+                  <div id="list-items" class="list-items"></div>
+                  <div id="total-price"></div>
+                  <button class="order--btn" id="order--btn">Complete order</button>
+                </div>
+            </section>
+            <section>
+              <div class="payment-modal" id="payment-modal">
+                <form id="submit-form" class="submit-form">
+                    <h1>Enter card details</h1>
+                <div class="payment-details">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" id="card" name="card" placeholder="Enter card number" required>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                </div>
+                 <p>
+                    <input type="submit" class="submit-btn" value="Pay">
+                 </p>
+                </form>
+              </div>
+            </section>
+            <section>
+              <div class="order-confirmation" id="order-confirmation">
+              </div>
+            </section>
+	<script src="index.js" type="module"></script>
+    </body>
+</html>
+
