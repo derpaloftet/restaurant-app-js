@@ -69,11 +69,13 @@ function updateList() {
     listArr.forEach(item => {
         const index = listArr.indexOf(item)
         const listItem = document.createElement("div")
-         listItem.innerHTML += `
+        listItem.innerHTML += `
          <div class="list-name-price">
-           <div class="list-name">${item.name}<button class="remove-btn" id="remove-btn-${index}">remove</button></div>
-           <div>${item.itemsSum}</div>
-           <div class="list-price">$${item.price}</div>
+           <div class="list-name">${ item.name }<button class="remove-btn" id="remove-btn-${ index }">remove</button></div>
+           <div class="list-info">
+             <div class="list-itemsSum">${ item.itemsSum }</div>
+             <div class="list-price">$${ item.price }</div>
+           </div>
          </div>
          `  
          listItemsEl.appendChild(listItem)
