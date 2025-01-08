@@ -12,15 +12,15 @@ foodItem.innerHTML = menuArray.map(item => {
    return `  
                     <li>
                       <div class="item">
-                        <div class="item-emoji">${item.emoji}</div>
+                        <div class="item-emoji">${ item.emoji }</div>
                       </div>
                       <div class="item">
-                        <div class="item--name">${item.name}</div>
-                        <div class="item--ingridients">${item.ingredients.join(", ")}</div>
-                        <div class="item--price">$${item.price}</div>
+                        <div class="item--name">${ item.name }</div>
+                        <div class="item--ingridients">${ item.ingredients.join(", ") }</div>
+                        <div class="item--price">$${ item.price }</div>
                       </div>
                       <div class="item">
-                        <button class="plus--btn" id="plus--btn-${item.id}">+</button>
+                        <button class="plus--btn" id="plus--btn-${ item.id }">+</button>
                       </div>
                     </li>     
                     <hr />         
@@ -28,30 +28,51 @@ foodItem.innerHTML = menuArray.map(item => {
 }).join(" ")
 listEl.appendChild(foodItem)
 
- const listArr = []
- let totalPrice = 0
- 
+const listArr = []
+let totalPrice = 0
+
 menuArray.forEach(item => {
-    const plusBtnEl = document.getElementById(`plus--btn-${item.id}`)
-    plusBtnEl.addEventListener("click", ()=>{
-        listArr.push({
-            name: item.name,
-            price: item.price}) 
+        const plusBtnEl = document.getElementById(`plus--btn-${ item.id }`)
+        plusBtnEl.addEventListener("click", () => {
+            console.log("item clicked, " + item.id);
+            let hasItem = false
+            listArr.forEach(listObj => {
+                if (listObj.id === item.id) {
+                    hasItem = true
+                }
+            })
+            if (!hasItem) {
+                listArr.push({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    itemsSum: 1
+                })
+            } else {
+                listArr.map(objOrder => {
+                    if (objOrder.id === item.id) {
+                        objOrder.itemsSum++
+                        objOrder.price = item.price * objOrder.itemsSum
+                    }
+                })
+            }
             totalPrice += item.price
             plusBtnHandler()
-    })
+        })
     }
 )
-
 function updateList() {
     const listItemsEl = document.getElementById("list-items")   
     listItemsEl.innerHTML = ""
+    console.log(listArr)
+
     listArr.forEach(item => {
         const index = listArr.indexOf(item)
         const listItem = document.createElement("div")
          listItem.innerHTML += `
          <div class="list-name-price">
            <div class="list-name">${item.name}<button class="remove-btn" id="remove-btn-${index}">remove</button></div>
+           <div>${item.itemsSum}</div>
            <div class="list-price">$${item.price}</div>
          </div>
          `  
