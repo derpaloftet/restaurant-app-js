@@ -47,7 +47,7 @@ section, header {
    justify-content: space-around
 }
  .item-emoji {
-     font-family: 'Inter', Verdana, serif;
+    font-family: 'Inter', Verdana, serif;
     font-size: 45px;
     font-weight: 400;
     min-width: 62px;
@@ -56,17 +56,25 @@ section, header {
     padding: 0 25px 10px 0;
     margin-right: 15px;
 }
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 .item--name {
     font-size: 18px;
 }
-.item--ingridients {
+.item--ingredients {
     font-size: 8px;
     color: #8B8B8B;
 }
 .item--price {
     font-size: 10px;
 }
-.plus--btn {
+.item-btns {
+    display: flex;
+}
+.plus--btn, .minus--btn {
     font-family: 'Inter', serif;
     border-radius: 50%;
     height: 25px;
@@ -100,24 +108,29 @@ section, header {
     margin-top: 8px;
 }
 .list-name-price {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 10px);
     padding-bottom: 5px;
+}
+.list-name {
+    justify-self: start;
+}
+.list-price {
+    justify-self: end;
 }
 .total-price-final {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
 }
-.list-info {
-    display: flex;
-    gap: 25px;
-}
 .list-itemsSum {
+    justify-self: end;
     color: #757575;
     font-size: 14px;
 }
 .remove-btn {
+    justify-self: end;
     color: #BBBBBB;
     background: #FFFFFF;
     border: none;

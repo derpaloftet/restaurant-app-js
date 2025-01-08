@@ -14,13 +14,14 @@ foodItem.innerHTML = menuArray.map(item => {
                       <div class="item">
                         <div class="item-emoji">${ item.emoji }</div>
                       </div>
-                      <div class="item">
+                      <div class="item item-details">
                         <div class="item--name">${ item.name }</div>
-                        <div class="item--ingridients">${ item.ingredients.join(", ") }</div>
+                        <div class="item--ingredients">${ item.ingredients.join(", ") }</div>
                         <div class="item--price">$${ item.price }</div>
                       </div>
-                      <div class="item">
+                      <div class="item item-btns">
                         <button class="plus--btn" id="plus--btn-${ item.id }">+</button>
+                        <button class="minus--btn" id="minus--btn-${ item.id }">-</button>
                       </div>
                     </li>     
                     <hr />         
@@ -34,7 +35,6 @@ let totalPrice = 0
 menuArray.forEach(item => {
         const plusBtnEl = document.getElementById(`plus--btn-${ item.id }`)
         plusBtnEl.addEventListener("click", () => {
-            console.log("item clicked, " + item.id);
             let hasItem = false
             listArr.forEach(listObj => {
                 if (listObj.id === item.id) {
@@ -59,6 +59,17 @@ menuArray.forEach(item => {
             totalPrice += item.price
             plusBtnHandler()
         })
+    const minusBtnEl = document.getElementById(`minus--btn-${ item.id }`)
+    minusBtnEl.addEventListener("click", () => {
+        listArr.map(listObj => {
+            if (listObj.id === item.id) {
+                listObj.itemsSum--
+                listObj.price = listObj.price - item.price
+            }
+        })
+        totalPrice -= item.price
+        plusBtnHandler()
+    })
     }
 )
 function updateList() {
@@ -71,11 +82,10 @@ function updateList() {
         const listItem = document.createElement("div")
         listItem.innerHTML += `
          <div class="list-name-price">
-           <div class="list-name">${ item.name }<button class="remove-btn" id="remove-btn-${ index }">remove</button></div>
-           <div class="list-info">
-             <div class="list-itemsSum">${ item.itemsSum }</div>
-             <div class="list-price">$${ item.price }</div>
-           </div>
+           <div class="list-name">${ item.name }</div>
+           <button class="remove-btn" id="remove-btn-${ index }">remove</button>
+           <div class="list-itemsSum">${ item.itemsSum }</div>
+           <div class="list-price">$${ item.price }</div>
          </div>
          `  
          listItemsEl.appendChild(listItem)
@@ -101,7 +111,6 @@ function updateList() {
 function plusBtnHandler() {
     orderEl.style.display = "block"
       updateList()
-      
       const orderBtnEl = document.getElementById("order--btn")
       orderBtnEl.addEventListener("click", ()=>{
           paymentEl.style.display = "flex"
