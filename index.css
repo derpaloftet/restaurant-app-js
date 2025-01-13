@@ -1,10 +1,17 @@
 html, body {
     margin: 0;
+    padding: 0;
     user-select: none;
+    background-color: #f9f9f9;
 }
-section, header {
+.app-container {
     display: flex;
-    max-width: 320px;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.content-container {
+    padding: 10px;
 }
 
 /*header*/
@@ -12,49 +19,41 @@ section, header {
     font-family: 'Smythe', Verdana, serif;
 }
 .header-img {
-    position: absolute;
-    top: 0;
-    max-width: 320px;
+    width: 100%;
 }
 .website-name {
-    position: relative;
-    left: 16px;
-    bottom: 8px;
+    position: absolute;
+    display: flex;
+    top: 10px;
+    flex-direction: column;
+    margin-left: 10px;
     color: #FFFF
 }
 .website-name h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 400;
-    margin: 30px 0 0;
 }
 .website-name h2 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     margin-top: 0;
 }
 
 /*items-list*/
-
 .items-list ul {
-   list-style-type: none;
-   padding-left: 16px;
- 
+    padding-left: 0;
 }
  .items-list ul li {
-   display: flex;
-   padding-top: 16px;
-   align-items: center;
-   justify-content: space-around
+   display: grid;
+   grid-template-columns: 1fr 2fr 1fr;
+   grid-template-rows: 1fr;
+   gap: 5px;
 }
  .item-emoji {
     font-family: 'Inter', Verdana, serif;
     font-size: 45px;
     font-weight: 400;
     min-width: 62px;
-}
-.item {
-    padding: 0 25px 10px 0;
-    margin-right: 15px;
 }
 .item-details {
     display: flex;
@@ -73,6 +72,8 @@ section, header {
 }
 .item-btns {
     display: flex;
+    justify-self: end;
+    align-items: center;
 }
 .plus--btn, .minus--btn {
     font-family: 'Inter', serif;
@@ -86,32 +87,23 @@ section, header {
     color: #3C3C3C;
     font-style: normal;
 }
-.order-list-info {
-    display: none;
-}
-
 .items-list hr {
     border-top: 1px solid lightgray;
-    width: 94%;
-    margin: 15px 0 0 10px;
 }
 
 /*order-list*/
 .order {
     text-align: center;
-    padding-bottom: 10px;
 }
 .order-list-info {
-    width: 100%;
-    margin-left: 22px;
-    margin-bottom: 22px;
-    margin-top: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
 }
 .list-name-price {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 10px);
-    padding-bottom: 5px;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding-bottom: 15px;
 }
 .list-name {
     justify-self: start;
@@ -132,7 +124,7 @@ section, header {
 .remove-btn {
     justify-self: end;
     color: #BBBBBB;
-    background: #FFFFFF;
+    background: #f9f9f9;
     border: none;
     font-family: 'Verdana', serif;
     font-size: 10px;
