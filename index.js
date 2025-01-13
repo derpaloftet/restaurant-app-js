@@ -62,12 +62,12 @@ menuArray.forEach(item => {
     const minusBtnEl = document.getElementById(`minus--btn-${ item.id }`)
     minusBtnEl.addEventListener("click", () => {
         listArr.map(listObj => {
-            if (listObj.id === item.id) {
+            if (listObj.id === item.id && listObj.itemsSum > 0) {
                 listObj.itemsSum--
                 listObj.price = listObj.price - item.price
+                totalPrice -= item.price
             }
         })
-        totalPrice -= item.price
         plusBtnHandler()
     })
     }
