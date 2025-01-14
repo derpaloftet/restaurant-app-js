@@ -34,9 +34,9 @@ html, body {
     font-weight: 400;
 }
 .website-name h2 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
-    margin-top: 0;
+    margin-top: -10px;
 }
 
 /*items-list*/
@@ -150,22 +150,23 @@ html, body {
     font-family: 'Verdana', serif;
     position: fixed;
     margin: 0 auto;
-    top: 80px;
-    right: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
     padding: 25px;
     border: 1.3px solid #757575;
-    height: 210px;
+    text-align: center;
     background-color: #FFFFFF;
-    width: 170px;
+    width: 200px;
+    height: 260px;
 }
  h1 {
-    font-size: 18px;
+    font-size: 15px;
 }
 .submit-btn {
     background: #16DB99;
-    width: 180px;
     border-radius: 3px;
     border: none;
     font-family: 'Verdana', serif;
@@ -188,9 +189,6 @@ input {
     font-family: 'Smythe', serif;
     color: #065F46;
     font-size: 20px;
-    margin-left: 22px;
-    margin-bottom: 22px;
-    width: 100%;
     border: 1.3px solid #757575;
     background-color: #ECFDF5;
     padding: 15px;
