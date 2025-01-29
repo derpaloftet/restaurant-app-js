@@ -1,21 +1,28 @@
-# cofc94cf09e0571fef021c59f
+# The Restaurant App
 
-Quick start:
+## What is The Restaurant App
+This is a simple food ordering web application that allows users to select items from a menu, adjust quantities, and place an order. 
+The application dynamically updates the total price and displays a confirmation message upon order submission.
 
+## How to start locally
+
+Start the Vite development server:
+```shell
+npm run dev
 ```
-$ npm install
-$ npm start
-````
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+## Technical Overview
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+**Technologies Used**
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- HTML 
+- CSS
+- JavaScript (ES6+)
 
-Happy Coding!
+**Features**
+
+- Display a menu with food items, including name, ingredients, and price.
+- Add and remove items dynamically using + and - buttons.
+- View and update the total order price in real-time.
+- Remove individual items from the order list.
+- Submit an order with a name, displaying a confirmation message.
