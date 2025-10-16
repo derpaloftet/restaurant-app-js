@@ -1,51 +1,51 @@
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Smythe&display=swap" rel="stylesheet">
-        <title>Jimmy's Dinner</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-           <div class="app-container">
-            <header class="header-inner">
-			   <img src="./images/bgImg.png" class="header-img" alt="An image of a burger">
-               <div class="website-name">
-                <h1>Jimmy's Dinner</h1>
-				<h2>The best burgers and pizzas in town.</h2>
-		       </div>
-            </header>
-            <div class="content-container">
-            <section class="items-list" id="items-list">
-            </section>
-            <section class="order-list-info" id="order-list-info">
-                  <div class="order">Your order</div>
-                  <div id="order-list-items" class="list-items"></div>
-                  <div id="total-price"></div>
-                  <button class="order--btn" id="order--btn">Complete order</button>
-            </section>
-            <section class="payment-modal" id="payment-modal">
-                <form id="submit-form" class="submit-form">
-                    <h1>Enter card details</h1>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Smythe&display=swap" rel="stylesheet">
+    <title>Jimmy's Dinner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="app-container">
+    <header class="header-inner">
+        <img src="./images/bgImg.png" class="header-img" alt="An image of a burger">
+        <div class="website-name">
+            <h1>Jimmy's Dinner</h1>
+            <h2>The best burgers and pizzas in town.</h2>
+        </div>
+    </header>
+    <div class="content-container">
+        <section class="items-list" id="items-list">
+        </section>
+        <section class="order-list-info" id="order-list-info">
+            <div class="order">Your order</div>
+            <div id="order-list-items" class="list-items"></div>
+            <div id="total-price"></div>
+            <button class="order--btn" id="order--btn">Complete order</button>
+        </section>
+        <section class="payment-modal" id="payment-modal">
+            <form id="submit-form" class="submit-form">
+                <h1>Enter card details</h1>
                 <div class="payment-details">
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     <input type="text" id="card" name="card" placeholder="Enter card number" required>
                     <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
                 </div>
-                 <p>
+                <p>
                     <input type="submit" class="submit-btn" value="Pay">
-                 </p>
-                </form>
-            </section>
-            <section>
-              <div class="order-confirmation" id="order-confirmation"></div>
-            </section>
-            </div>
-           </div>
-	<script src="index.js" type="module"></script>
-    </body>
+                </p>
+            </form>
+        </section>
+        <section>
+            <div class="order-confirmation" id="order-confirmation"></div>
+        </section>
+    </div>
+</div>
+<script src="index.js" type="module"></script>
+</body>
 </html>
 
